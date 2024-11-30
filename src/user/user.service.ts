@@ -12,7 +12,7 @@ export class UserService {
   async createUser(){
     return {
       user : [],
-      message: "data retrieve ",
+      message: "data retrieves ",
     };
   }
 }
