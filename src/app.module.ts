@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 // import { User } from "./user/entities/user.entity";
 // import { RoleModule } from './role/role.module';
 import { UserModule } from './user/user.module';
+import { ReportModule } from './report/report.module';
 
 @Module({
   imports: [
@@ -24,7 +25,8 @@ import { UserModule } from './user/user.module';
     // }),
     // UserModule,
     // RoleModule,
-  UserModule],
+  UserModule,
+    ReportModule],
   controllers: [AppController],
   providers: [AppService],
 })
