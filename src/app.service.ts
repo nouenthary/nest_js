@@ -20,6 +20,8 @@ export class AppService {
       });
     }
 
+    console.log('')
+
     return user;
   }
 }
