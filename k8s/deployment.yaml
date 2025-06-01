@@ -3,7 +3,12 @@ kind: Deployment
 metadata:
   name: nestjs-deployment
 spec:
-  replicas: 2
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
   selector:
     matchLabels:
       app: nestjs
@@ -14,6 +19,13 @@ spec:
     spec:
       containers:
         - name: nestjs
-          image: tharynouen/nest_js:latest
+          image: my-image:latest
+          imagePullPolicy:  IfNotPresent #Always
           ports:
             - containerPort: 3000
+#          readinessProbe:
+#            httpGet:
+#              path: /health
+#              port: 3000
+#            initialDelaySeconds: 5
+#            periodSeconds: 10
